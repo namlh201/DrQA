@@ -14,7 +14,7 @@ import copy
 from .tokenizer import Tokens, Tokenizer
 
 
-class SpacyTokenizer(Tokenizer):
+class SpacyViTokenizer(Tokenizer):
 
     def __init__(self, **kwargs):
         """
@@ -30,7 +30,7 @@ class SpacyTokenizer(Tokenizer):
         if 'ner' not in self.annotators:
             nlp_kwargs['entity'] = False
         #self.nlp = spacy.load(model, **nlp_kwargs)
-        self.nlp = spacy.load('en_core_web_trf')
+        self.nlp = spacy.load('vi_core_news_lg')
 
     def tokenize(self, text):
         # We don't treat new lines as tokens.
